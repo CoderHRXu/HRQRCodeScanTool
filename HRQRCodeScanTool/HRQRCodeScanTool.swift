@@ -1,6 +1,6 @@
 //
-//  XHRQRCodeTool.swift
-//  JiKeJiaoShi
+//  HRQRCodeScanTool.swift
+//  HRScanToolDemo
 //
 //  Created by haoran on 2018/4/9.
 //  Copyright © 2018年 fclassroom. All rights reserved.
