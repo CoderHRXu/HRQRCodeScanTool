@@ -7,6 +7,7 @@ HRQRCodeScanTool is a lightweight, high cohesion, low couplingpure, Swift tool f
 
 <img src="jpg/scan1.jpeg" alt="二维码">
 <img src="jpg/scan2.jpeg" alt="条码">
+
 ## Requirements
 
 - Swift 4.1
@@ -49,7 +50,7 @@ HRQRCodeScanTool.shared.beginScanInView(view: view)
 ......
 // scan result will call in  delegate methods 
 func scanQRCodeFaild(error: String){
-print(+error)
+print(error)
 }
 
 func scanQRCodeSuccess(resultStrs: [String]){
