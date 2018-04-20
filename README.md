@@ -1,6 +1,12 @@
 # HRQRCodeScanTool
 
-HRQRCodeScanTool is a lightweight, high cohesion, low couplingpure, Swift tool for QRcode scan.  This tool uses AVFoundation based on Swift4.1 API.  It improves the reusability of the code and make the code be easy to maintain and extend in ViewControllers
+## Summary 
+HRQRCodeScanTool is a lightweight, high cohesion, low couplingpure, pure-Swift tool for QRcode scan.  
+
+## Description
+This tool uses AVFoundation based on Swift4.1 API.  It improves the reusability of the code and make the code be easy to maintain and extend in ViewControllers.
+This tool support not only qrcode but also support .ean13 .ean8 .upce .code39 .code93 .code128 .code39Mod43.
+Don't run in simulator.  
 
 
 ## Example
@@ -15,6 +21,12 @@ HRQRCodeScanTool is a lightweight, high cohesion, low couplingpure, Swift tool f
 - Xcode 9.3
 
 ## Installation
+
+Remember to add this key-value in your info.plist 
+```
+<key>NSCameraUsageDescription</key>
+<string>CameraUsageDescription</string>
+```
 
 ***CocoaPods(recommend):***
 
@@ -89,4 +101,3 @@ Blog: [www.akpop.top](http://www.akpop.top)
 ## License
 
 HRQRCodeScanTool is released under the MIT license. See the LICENSE file for more info.
-
