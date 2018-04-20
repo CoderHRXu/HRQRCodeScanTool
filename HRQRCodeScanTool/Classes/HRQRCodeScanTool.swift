@@ -1,9 +1,10 @@
 //
-//  HRQRCodeScanTool.swift
-//  HRScanToolDemo
+//  XHRQRCodeTool.swift
+//  HRScanToolDemp
 //
 //  Created by haoran on 2018/4/9.
-//  Email: xuhaoran416518@gmail.com
+//  Email:  xuhaoran416518@gmail.com
+//  Github: https://github.com/CoderHRXu/HRQRCodeScanTool
 //  Copyright © 2018年 haoran. All rights reserved.
 //
 
@@ -12,7 +13,7 @@ import AVFoundation
 import CoreFoundation
 
 
-open enum HRQRCodeTooError: Int {
+public enum HRQRCodeTooError: Int {
     /// 模拟器错误
     case SimulatorError
     /// 摄像头权限错误
@@ -22,7 +23,7 @@ open enum HRQRCodeTooError: Int {
 }
 
 
-open protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
+public protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
  
     /// 识别失败
     ///
@@ -98,16 +99,23 @@ open class HRQRCodeScanTool: NSObject {
     // MARK: - LifeCycle
     private override init(){
         super.init()
-    
-        
+        if !checkCameraAuth() {
+            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
+            return
+        }
         guard let device = AVCaptureDevice.default(for: .video)  else {
             return
         }
-        inPut = try! AVCaptureDeviceInput.init(device: device)
+        do {
+            inPut = try AVCaptureDeviceInput.init(device: device)
+        } catch  {
+            print(error)
+            delegate?.scanQRCodeFaild(error: .OtherError)
+        }
         
         outPut.setMetadataObjectsDelegate(self as AVCaptureMetadataOutputObjectsDelegate, queue: DispatchQueue.main)
         preLayer.session = session
-        checkCameraAuth()
+       
     }
     
     
@@ -122,10 +130,12 @@ open class HRQRCodeScanTool: NSObject {
         delegate?.scanQRCodeFaild(error: .SimulatorError)
         return
         #endif
-        checkCameraAuth()
+        guard let input = inPut  else {
+            return
+        }
         
-        if session.canAddInput(inPut!) && session.canAddOutput(outPut) {
-            session.addInput(inPut!)
+        if session.canAddInput(input) && session.canAddOutput(outPut) {
+            session.addInput(input)
             session.addOutput(outPut)
             // 设置元数据处理类型(注意, 一定要将设置元数据处理类型的代码添加到  会话添加输出之后)
             outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]
@@ -246,13 +256,13 @@ open class HRQRCodeScanTool: NSObject {
         deleteTempLayers.removeAll()
     }
     
-    fileprivate func checkCameraAuth() {
+    /// 检查相机权限
+    ///
+    /// - Returns: 是否
+    fileprivate func checkCameraAuth() -> Bool {
         
         let status = AVCaptureDevice.authorizationStatus(for: .video)
-        if status != .authorized {
-            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
-            return
-        }
+        return status == .authorized
     }
     
 }
@@ -263,7 +273,7 @@ open class HRQRCodeScanTool: NSObject {
 extension HRQRCodeScanTool: AVCaptureMetadataOutputObjectsDelegate {
     
 
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection){
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection){
         
         // 移除扫描层
         if isDrawQRCodeRect {
