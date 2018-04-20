@@ -22,11 +22,6 @@ Don't run in simulator.
 
 ## Installation
 
-Remember to add this key-value in your info.plist 
-```
-<key>NSCameraUsageDescription</key>
-<string>CameraUsageDescription</string>
-```
 
 ***CocoaPods(recommend):***
 
@@ -52,6 +47,12 @@ import HRQRCodeScanTool
 
 
 ## Usage example
+
+Remember to add this key-value in your info.plist 
+```
+<key>NSCameraUsageDescription</key>
+<string>CameraUsageDescription</string>
+```
 
 Inited from pure code ：
 
