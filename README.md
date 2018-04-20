@@ -98,7 +98,9 @@ open func stopScan()
 CoderHRXu
 Mail: [xuhaoran416518@gmail.com](mailto:xuhaoran416518@gmail.com)
 Blog: [www.akpop.top](http://www.akpop.top)
-
+Relevant article： [https://www.jianshu.com/p/e16a4380d7b2](https://www.jianshu.com/p/e16a4380d7b2)
+[https://juejin.im/post/5ad9b34851882567361479aa](https://juejin.im/post/5ad9b34851882567361479aa)
+[http://www.akpop.top/2018/04/20/Swift4QRCodeTool/](http://www.akpop.top/2018/04/20/Swift4QRCodeTool/)
 ## License
 
 HRQRCodeScanTool is released under the MIT license. See the LICENSE file for more info.

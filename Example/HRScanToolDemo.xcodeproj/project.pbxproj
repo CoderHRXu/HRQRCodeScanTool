@@ -14,6 +14,8 @@
 		AD524631208896B800FA030B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD52462F208896B800FA030B /* LaunchScreen.storyboard */; };
 		AD52463D20889BFF00FA030B /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD52463C20889BFF00FA030B /* ScanViewController.swift */; };
 		AD52463F20889E5400FA030B /* HRQRCodeScanTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD52463E20889E5400FA030B /* HRQRCodeScanTool.swift */; };
+		AD7271002089C08400661E6B /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7270FF2089C08400661E6B /* UIImage+QRCode.swift */; };
+		AD7271022089C4F200661E6B /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7271012089C4F200661E6B /* String+QRCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AD524632208896B800FA030B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD52463C20889BFF00FA030B /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		AD52463E20889E5400FA030B /* HRQRCodeScanTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRQRCodeScanTool.swift; sourceTree = "<group>"; };
+		AD7270FF2089C08400661E6B /* UIImage+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		AD7271012089C4F200661E6B /* String+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		AD524625208896B600FA030B /* HRScanToolDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AD7270FE2089BFE800661E6B /* Extension */,
 				AD524638208897B900FA030B /* Tool */,
 				AD524626208896B600FA030B /* AppDelegate.swift */,
 				AD524628208896B600FA030B /* RootController.swift */,
@@ -76,6 +81,15 @@
 				AD52463E20889E5400FA030B /* HRQRCodeScanTool.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		AD7270FE2089BFE800661E6B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD7270FF2089C08400661E6B /* UIImage+QRCode.swift */,
+				AD7271012089C4F200661E6B /* String+QRCode.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7271022089C4F200661E6B /* String+QRCode.swift in Sources */,
 				AD52463F20889E5400FA030B /* HRQRCodeScanTool.swift in Sources */,
 				AD524629208896B600FA030B /* RootController.swift in Sources */,
+				AD7271002089C08400661E6B /* UIImage+QRCode.swift in Sources */,
 				AD524627208896B600FA030B /* AppDelegate.swift in Sources */,
 				AD52463D20889BFF00FA030B /* ScanViewController.swift in Sources */,
 			);
