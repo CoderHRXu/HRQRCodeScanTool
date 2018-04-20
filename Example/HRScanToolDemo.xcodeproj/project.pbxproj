@@ -303,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.HRScanToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9d8ce7c6-9552-4271-92c6-3b80c7a58b28";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fclassroom.ttel";
@@ -323,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.HRScanToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

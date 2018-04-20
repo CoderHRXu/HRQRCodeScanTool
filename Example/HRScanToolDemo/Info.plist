@@ -20,8 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSCameraUsageDescription</key>
-    <string>我们需要通过您的相机来提供更好的服务</string>
+	<key>NSCameraUsageDescription</key>
+	<string>我们需要通过您的相机来提供更好的服务</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
