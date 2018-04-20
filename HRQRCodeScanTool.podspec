@@ -83,6 +83,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.platform    = :ios, "8.0"
+  s.swift_version = "4.1"
   
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

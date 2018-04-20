@@ -3,7 +3,8 @@
 //  HRScanToolDemo
 //
 //  Created by haoran on 2018/4/9.
-//  Copyright © 2018年 fclassroom. All rights reserved.
+//  Email: xuhaoran416518@gmail.com
+//  Copyright © 2018年 haoran. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +12,7 @@ import AVFoundation
 import CoreFoundation
 
 
-enum HRQRCodeTooError: Int {
+open enum HRQRCodeTooError: Int {
     /// 模拟器错误
     case SimulatorError
     /// 摄像头权限错误
@@ -21,7 +22,7 @@ enum HRQRCodeTooError: Int {
 }
 
 
-protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
+open protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
  
     /// 识别失败
     ///
@@ -35,39 +36,39 @@ protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
 }
 
 
-class HRQRCodeScanTool: NSObject {
+open class HRQRCodeScanTool: NSObject {
 
-    static let shared = HRQRCodeScanTool()
+    open static let shared = HRQRCodeScanTool()
     
     
     // MARK: - property
     
     /// 代理
-    weak var delegate: HRQRCodeScanToolDelegate?
+    open weak var delegate: HRQRCodeScanToolDelegate?
     
     /// 设置是否需要描绘二维码边框 默认true
-    var isDrawQRCodeRect = true
+    open var isDrawQRCodeRect = true
     
     /// 二维码边框颜色 默认红色
-    var drawRectColor = UIColor.red
+    open var drawRectColor = UIColor.red
     
     /// 二维码边框线宽 默认2
-    var drawRectLineWith: CGFloat = 2
+    open var drawRectLineWith: CGFloat = 2
     
     /// 黑色蒙版层 默认开启
-    var isShowMask = true
+    open var isShowMask = true
     
     /// 蒙板层 默认黑色 alpha 0.5
-    var maskColor = UIColor.init(white: 0, alpha: 0.5)
+    open var maskColor = UIColor.init(white: 0, alpha: 0.5)
     
     /// 中心非蒙板区域的宽 默认200
-    var centerWidth: CGFloat = 200;
+    open var centerWidth: CGFloat = 200;
     
     /// 中心非蒙板区域的宽 默认200
-    var centerHeight: CGFloat = 200;
+    open var centerHeight: CGFloat = 200;
     
     /// 中心非蒙板区域的中心点 默认Veiw的中心
-    var centerPosition: CGPoint?
+    open var centerPosition: CGPoint?
     
     /// 存储layer
     fileprivate var deleteTempLayers = [CAShapeLayer]()
@@ -115,7 +116,7 @@ class HRQRCodeScanTool: NSObject {
     /// 开始扫码 结果在delegate方法返回
     ///
     /// - Parameter view: view
-    func beginScanInView(view: UIView) {
+    open func beginScanInView(view: UIView) {
         
         #if targetEnvironment(simulator)
         delegate?.scanQRCodeFaild(error: .SimulatorError)
@@ -172,7 +173,7 @@ class HRQRCodeScanTool: NSObject {
     
     
     /// 停止扫描
-    func stopScan() {
+    open func stopScan() {
         
         session.stopRunning()
         if let input = inPut {
@@ -185,7 +186,7 @@ class HRQRCodeScanTool: NSObject {
     /// 设置兴趣区域
     ///
     /// - Parameter originRect: 区域
-    func setInterestRect(originRect: CGRect) {
+    open func setInterestRect(originRect: CGRect) {
         
         // 设置兴趣点
         // 兴趣点的坐标是横屏状态(0, 0 代表竖屏右上角, 1,1 代表竖屏左下角)
