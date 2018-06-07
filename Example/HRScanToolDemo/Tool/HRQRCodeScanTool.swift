@@ -115,7 +115,8 @@ open class HRQRCodeScanTool: NSObject {
         
         outPut.setMetadataObjectsDelegate(self as AVCaptureMetadataOutputObjectsDelegate, queue: DispatchQueue.main)
         preLayer.session = session
-       
+        preLayer.videoGravity = .resizeAspectFill
+
     }
     
     

@@ -115,6 +115,8 @@ open class HRQRCodeScanTool: NSObject {
         
         outPut.setMetadataObjectsDelegate(self as AVCaptureMetadataOutputObjectsDelegate, queue: DispatchQueue.main)
         preLayer.session = session
+        preLayer.videoGravity = .resizeAspectFill
+
        
     }
     
@@ -138,9 +140,7 @@ open class HRQRCodeScanTool: NSObject {
             session.addInput(input)
             session.addOutput(outPut)
             // 设置元数据处理类型(注意, 一定要将设置元数据处理类型的代码添加到  会话添加输出之后)
-            outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]
-//            outPut.metadataObjectTypes = [.qr]
-            
+            outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]            
 
         }else{
             // delegate错误回调
