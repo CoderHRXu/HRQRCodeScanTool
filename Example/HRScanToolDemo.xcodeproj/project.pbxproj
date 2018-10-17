@@ -124,6 +124,7 @@
 				TargetAttributes = {
 					AD524622208896B600FA030B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -319,11 +320,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.HRScanToolDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d8ce7c6-9552-4271-92c6-3b80c7a58b28";
+				PROVISIONING_PROFILE = "73e24cf2-41a6-4b2e-87e1-25d7be728067";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fclassroom.ttel";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -332,17 +333,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JX333254R3;
 				INFOPLIST_FILE = HRScanToolDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haoran.HRScanToolDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE = "6d63b8ee-1668-4266-b389-e0623aaa6d88";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fclassroom.ttel";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

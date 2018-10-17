@@ -39,7 +39,7 @@ public protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
 
 open class HRQRCodeScanTool: NSObject {
 
-    open static let shared = HRQRCodeScanTool()
+    public static let shared = HRQRCodeScanTool()
     
     
     // MARK: - property
@@ -99,10 +99,7 @@ open class HRQRCodeScanTool: NSObject {
     // MARK: - LifeCycle
     private override init(){
         super.init()
-        if !checkCameraAuth() {
-            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
-            return
-        }
+        
         guard let device = AVCaptureDevice.default(for: .video)  else {
             return
         }
@@ -131,6 +128,11 @@ open class HRQRCodeScanTool: NSObject {
         delegate?.scanQRCodeFaild(error: .SimulatorError)
         return
         #endif
+        
+        if !checkCameraAuth() {
+            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
+        }
+        
         guard let input = inPut  else {
             return
         }
@@ -264,6 +266,7 @@ open class HRQRCodeScanTool: NSObject {
         
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         return status == .authorized
+       
     }
     
 }

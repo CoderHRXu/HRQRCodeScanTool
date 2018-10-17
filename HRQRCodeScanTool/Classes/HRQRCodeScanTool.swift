@@ -39,7 +39,7 @@ public protocol HRQRCodeScanToolDelegate : NSObjectProtocol {
 
 open class HRQRCodeScanTool: NSObject {
 
-    open static let shared = HRQRCodeScanTool()
+    public static let shared = HRQRCodeScanTool()
     
     
     // MARK: - property
@@ -99,10 +99,7 @@ open class HRQRCodeScanTool: NSObject {
     // MARK: - LifeCycle
     private override init(){
         super.init()
-        if !checkCameraAuth() {
-            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
-            return
-        }
+        
         guard let device = AVCaptureDevice.default(for: .video)  else {
             return
         }
@@ -117,7 +114,6 @@ open class HRQRCodeScanTool: NSObject {
         preLayer.session = session
         preLayer.videoGravity = .resizeAspectFill
 
-       
     }
     
     
@@ -132,6 +128,11 @@ open class HRQRCodeScanTool: NSObject {
         delegate?.scanQRCodeFaild(error: .SimulatorError)
         return
         #endif
+        
+        if !checkCameraAuth() {
+            delegate?.scanQRCodeFaild(error: .CamaraAuthorityError)
+        }
+        
         guard let input = inPut  else {
             return
         }
@@ -140,7 +141,9 @@ open class HRQRCodeScanTool: NSObject {
             session.addInput(input)
             session.addOutput(outPut)
             // 设置元数据处理类型(注意, 一定要将设置元数据处理类型的代码添加到  会话添加输出之后)
-            outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]            
+            outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]
+//            outPut.metadataObjectTypes = [.qr]
+            
 
         }else{
             // delegate错误回调
@@ -263,6 +266,7 @@ open class HRQRCodeScanTool: NSObject {
         
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         return status == .authorized
+       
     }
     
 }

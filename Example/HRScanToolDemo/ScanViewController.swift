@@ -18,7 +18,7 @@ class ScanViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -66,7 +66,7 @@ extension ScanViewController: HRQRCodeScanToolDelegate {
             
             let action = UIAlertAction(title: "确定", style: .default, handler: {(_ action: UIAlertAction) in
                 
-                let url = URL(string: UIApplicationOpenSettingsURLString)
+                let url = URL(string: UIApplication.openSettingsURLString)
                 UIApplication.shared.openURL(url!)
             })
             
