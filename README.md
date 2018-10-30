@@ -53,6 +53,17 @@ Remember to add this key-value in your info.plist
 <key>NSCameraUsageDescription</key>
 <string>CameraUsageDescription</string>
 ```
+CheckCameraAuthauthority
+```swift
+import AVFoundation
+
+let status = AVCaptureDevice.authorizationStatus(for: .video)
+if status != .authorized {
+         AVCaptureDevice.requestAccess(for: .video) { (flag) in
+    }
+}
+
+```
 
 Inited from pure code ：
 
@@ -92,11 +103,13 @@ open func beginScanInView(view: UIView)
 open func setInterestRect(originRect: CGRect)
 open func stopScan()
 ```
+### Mentions
+If you use it under  opaque navigation bars, the preview layer will move down the navigation bar height, so is ```open var centerPosition: CGPoint?```.
 
 ## Author
 
 CoderHRXu
-Mail: [xuhaoran416518@gmail.com](mailto:xuhaoran416518@gmail.com)
+Mail: [xuhaoran416518@gmail.com](mailto:xuhaoran416518@gmail.com) 
 Blog: [www.akpop.top](http://www.akpop.top)
 Relevant article： [https://www.jianshu.com/p/e16a4380d7b2](https://www.jianshu.com/p/e16a4380d7b2)
 [https://juejin.im/post/5ad9b34851882567361479aa](https://juejin.im/post/5ad9b34851882567361479aa)
