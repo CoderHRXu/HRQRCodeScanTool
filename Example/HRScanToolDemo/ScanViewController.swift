@@ -12,7 +12,7 @@ class ScanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        self.navigationController?.navigationBar.isTranslucent = false
         setupScanConfig()
     }
 
@@ -33,16 +33,16 @@ class ScanViewController: UIViewController {
         return
         #endif
         
-        let width: CGFloat                     = 300
-        HRQRCodeScanTool.shared.isDrawQRCodeRect   = true
-        HRQRCodeScanTool.shared.drawRectColor      = UIColor.purple
-        HRQRCodeScanTool.shared.drawRectLineWith   = 5
+        let width: CGFloat                          = 300
+        HRQRCodeScanTool.shared.isDrawQRCodeRect    = true
+        HRQRCodeScanTool.shared.drawRectColor       = UIColor.purple
+        HRQRCodeScanTool.shared.drawRectLineWith    = 5
         HRQRCodeScanTool.shared.setInterestRect(originRect: CGRect(x:(view.frame.size.width - width) * 0.5, y: (view.frame.size.height - width) * 0.5, width: width, height: width))
-        HRQRCodeScanTool.shared.delegate           = self
-        HRQRCodeScanTool.shared.centerHeight       = 200
-        HRQRCodeScanTool.shared.centerWidth        = 300
-        HRQRCodeScanTool.shared.isShowMask         = true
-        HRQRCodeScanTool.shared.maskColor          = UIColor.init(white: 0, alpha: 0.2)
+        HRQRCodeScanTool.shared.delegate            = self
+        HRQRCodeScanTool.shared.centerHeight        = 200
+        HRQRCodeScanTool.shared.centerWidth         = 200
+        HRQRCodeScanTool.shared.isShowMask          = true
+        HRQRCodeScanTool.shared.maskColor           = UIColor.init(white: 0, alpha: 0.2)
         HRQRCodeScanTool.shared.beginScanInView(view: view)
     }
 }

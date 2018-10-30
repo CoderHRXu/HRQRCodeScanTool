@@ -74,7 +74,6 @@ open class HRQRCodeScanTool: NSObject {
     /// 存储layer
     fileprivate var deleteTempLayers = [CAShapeLayer]()
     
-    
     /// 输入
     fileprivate var inPut: AVCaptureDeviceInput?
     
@@ -142,8 +141,6 @@ open class HRQRCodeScanTool: NSObject {
             session.addOutput(outPut)
             // 设置元数据处理类型(注意, 一定要将设置元数据处理类型的代码添加到  会话添加输出之后)
             outPut.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .code39Mod43, .qr]
-//            outPut.metadataObjectTypes = [.qr]
-            
 
         }else{
             // delegate错误回调
