@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HRQRCodeScanTool"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "An easy tool for qrcode scan "
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  "An easy tool for qrcode scan, based on AVFoundation, Swift 4.1"
+  "An easy tool for qrcode scan, based on AVFoundation, Swift 4"
   DESC
 
   s.homepage     = "https://github.com/CoderHRXu/HRQRCodeScanTool"
