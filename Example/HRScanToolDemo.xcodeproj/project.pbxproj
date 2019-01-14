@@ -321,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuhaoran.ttel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "73e24cf2-41a6-4b2e-87e1-25d7be728067";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -342,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fclassroom.ttel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuhaoran.ttel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6d63b8ee-1668-4266-b389-e0623aaa6d88";
 				PROVISIONING_PROFILE_SPECIFIER = "";
