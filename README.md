@@ -116,4 +116,7 @@ Relevant article： [https://www.jianshu.com/p/e16a4380d7b2](https://www.jianshu
 [http://www.akpop.top/2018/04/20/Swift4QRCodeTool/](http://www.akpop.top/2018/04/20/Swift4QRCodeTool/)
 ## License
 
-HRQRCodeScanTool is released under the MIT license. See the LICENSE file for more info.
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
+HRQRCodeScanTool is released under the MIT and Anti-996 license. See the LICENSE file for more info.
+
